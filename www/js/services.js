@@ -39,8 +39,7 @@ angular.module('CostSplitter.services', [])
       return splitters;
     },
     getEvent: function(splitterId, eventId) {
-      // Simple index lookup
       return splitters[splitterId].events[eventId];
     }
-  }
+  };
 });

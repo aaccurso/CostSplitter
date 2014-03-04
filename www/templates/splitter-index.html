@@ -10,7 +10,7 @@
 
       <div ng-repeat="split in splitters">
         <div class="item item-divider">{{split.title}}</div>
-        <a ng-repeat="event in split.events" ng-href="#/tab/splitters/{{split.id}}/events/{{event.id}}" class="item">{{event.title}}</a>
+        <a ng-repeat="event in split.events" ng-href="#/tab/splitters/{{split.id}}/events/{{$index}}" class="item">{{event.title}}</a>
       </div>
       
     </ion-list>
