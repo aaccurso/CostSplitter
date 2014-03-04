@@ -6,3 +6,8 @@
   width: 96px;
   height: 96px;
 }
+
+.button.button-menu {
+	padding: 0 6px;
+	font-size: 1.6em;
+}
