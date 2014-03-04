@@ -9,36 +9,21 @@ angular.module('CostSplitter', ['ionic', 'CostSplitter.services', 'CostSplitter.
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/tabs.html"
-    })
-
     // the pet tab has its own child nav-view and history
-    .state('tab.splitter-index', {
+    .state('splitter-index', {
       url: '/splitters',
-      views: {
-        'splitters-tab': {
-          templateUrl: 'templates/splitter-index.html',
-          controller: 'SplitterIndexCtrl'
-        }
-      }
+      templateUrl: 'templates/splitter-index.html',
+      controller: 'SplitterIndexCtrl'
     })
 
-    .state('tab.event-detail', {
+    .state('event-detail', {
       url: '/splitters/:splitterId/events/:eventId',
-      views: {
-        'splitters-tab': {
-          templateUrl: 'templates/event-detail.html',
-          controller: 'EventCtrl'
-        }
-      }
+      templateUrl: 'templates/event-detail.html',
+      controller: 'EventCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/splitters');
+  $urlRouterProvider.otherwise('/splitters');
 
 });
 
