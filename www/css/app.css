@@ -9,5 +9,12 @@
 
 .button.button-menu {
 	padding: 0 6px;
-	font-size: 1.6em;
+}
+.button.button-menu::before {
+	font-size: 1.8em;
+}
+
+.button.add-event {
+	top: 2px;
+	right: 1px;
 }

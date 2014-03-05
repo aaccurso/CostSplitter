@@ -9,7 +9,12 @@
     <ion-list>
 
       <div ng-repeat="split in splitters">
-        <div class="item item-divider">{{split.title}}</div>
+        <div class="item item-divider item-button-right">
+          {{split.title}}
+          <button ng-click="addEvent()" class="button button-clear button-energized add-event">
+            <span class="icon ion-plus"></span>
+          </button>
+        </div>
         <a ng-repeat="event in split.events" ng-href="#/splitters/{{split.id}}/events/{{$index}}" class="item">
           {{event.title}}
           <span class="item-note">{{event.date | date:'yyyy-MM-dd' }}</span>

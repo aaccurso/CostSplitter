@@ -4,14 +4,16 @@
   The PetCtrl pulls data from the Pets service (service.js)
   The Pets service returns an array of pet data
 -->
-<ion-view title="event.title">
+<ion-view title="event.title" right-buttons="rightButtons">
   <ion-content has-header="true" padding="true">
     <div class="list">
     	<div ng-repeat="cost in event.costs" class="item">
     		<h2>{{cost.person}}</h2>
-    		<p>{{cost.title}} <span class="badge badge-energized">{{cost.cost}}</span></p>
+    		<p>{{cost.title}} <span class="badge badge-balanced">{{cost.cost}}</span></p>
     	</div>
     </div>
-    <p><a class="button button-small icon ion-arrow-left-b" href="#/splitters"> All Splitters</a></p>
+    <button class="button button-block button-balanced icon-right ion-ios7-calculator">
+		  Split Costs!
+		</button>
   </ion-content>
 </ion-view>
