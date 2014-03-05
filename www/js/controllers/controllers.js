@@ -24,5 +24,12 @@ angular.module('CostSplitter.controllers', [])
       	// TODO: compose new cost
       	$scope.sideMenuController.toggleRight();
       }
+    },
+    {
+    	type: 'ion-trash-a button-menu button-clear',
+    	tap: function(e) {
+    		// TODO: delete event
+    		// SplitterService.deleteEvent($stateParams.splitterId, $stateParams.eventId);
+    	}
   }];
 });

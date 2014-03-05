@@ -7,8 +7,13 @@
   height: 96px;
 }
 
+.nav-bar h1 {
+	font-weight: bold;
+}
+
 .button.button-menu {
 	padding: 0 6px;
+	margin-left: 8px;
 }
 .button.button-menu::before {
 	font-size: 1.8em;
