@@ -9,7 +9,7 @@
     <div class="list">
     	<div ng-repeat="cost in event.costs" class="item">
     		<h2>{{cost.person}}</h2>
-    		<p>{{cost.title}} <span class="badge badge-balanced">{{cost.cost}}</span></p>
+    		<p>{{cost.title}} <span class="badge badge-balanced">{{cost.cost | currency}}</span></p>
     	</div>
     </div>
     <button class="button button-block button-balanced icon-right ion-ios7-calculator">
