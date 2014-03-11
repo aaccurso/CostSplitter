@@ -1,0 +1,23 @@
+{
+  "name": "CostSplitter",
+  "version": "0.0.1",
+  "homepage": "https://github.com/aaccurso/CostSplitter",
+  "authors": [
+    "Alan Accurso <accurso.alan@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.9",
+    "angularLocalStorage": "~0.1.7",
+    "ionic": "~0.9.26"
+  }
+}
