@@ -1,6 +1,6 @@
 {
-  "name": "MyFirstIonic",
-  "description": "My First Ionic App",
+  "name": "CostSplitter",
+  "description": "Mobile app to split costs of events among people.",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -20,6 +20,7 @@
     "karma-coverage": "^0.2.0",
     "phantomjs": "^1.9.7-1",
     "karma-junit-reporter": "^0.2.1",
-    "grunt-karma": "^0.8.0"
+    "grunt-karma": "^0.8.0",
+    "grunt": "^0.4.3"
   }
 }

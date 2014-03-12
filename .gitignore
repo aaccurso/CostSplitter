@@ -3,3 +3,4 @@
 platforms/^.*
 node_modules/
 .cordova/
+www/tests/coverage/
