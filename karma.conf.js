@@ -11,23 +11,50 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/bower_components/angular-resource/angular-resource.js',
-      'app/bower_components/angular-cookies/angular-cookies.js',
-      'app/bower_components/angular-sanitize/angular-sanitize.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/scripts/*.js',
-      'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'lib/angular/angular.js',
+      'lib/angular-animate/angular-animate.js',
+      'lib/angular-resource/angular-resource.js',
+      'lib/angular-cookies/angular-cookies.js',
+      'lib/angular-sanitize/angular-sanitize.js',
+      'lib/angular-ui-router/angular-ui-router.js',
+      'lib/ionic/release/js/ionic.js',
+      'lib/ionic/release/js/ionic-angular.js',
+      'lib/ionic/release/js/ionic-bundle.js',
+      'js/*.js',
+      'js/**/*.js',
+      'tests/mock/**/*.js',
+      'tests/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
     exclude: [],
+    
+    preprocessors: {
+      'js/*.js': 'coverage',
+      'js/**/*.js': 'coverage'
+    },
+
+    coverageReporter : {
+      type : 'html',
+      dir : '../tests/coverage/'
+    },
+
+    plugins: [
+      'karma-jasmine',
+      'karma-phantomjs-launcher',
+      'karma-coverage',
+      'karma-junit-reporter'
+    ],
+
+    // test results reporter to use
+    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+    reporters: ['progress', 'coverage'],
 
     // web server port
     port: 8080,
+
+    // enable / disable colors in the output (reporters and logs)
+    colors: true,
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
