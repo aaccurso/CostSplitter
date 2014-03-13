@@ -21,6 +21,10 @@
     "phantomjs": "^1.9.7-1",
     "karma-junit-reporter": "^0.2.1",
     "grunt-karma": "^0.8.0",
-    "grunt": "^0.4.3"
+    "grunt": "^0.4.4",
+    "grunt-contrib-compass": "^0.7.2",
+    "grunt-autoprefixer": "^0.7.2",
+    "grunt-bower-install": "^1.0.2",
+    "grunt-contrib-watch": "^0.6.0"
   }
 }
