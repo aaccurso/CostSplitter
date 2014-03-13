@@ -17,6 +17,7 @@ module.exports = function(config) {
       'lib/angular-cookies/angular-cookies.js',
       'lib/angular-sanitize/angular-sanitize.js',
       'lib/angular-ui-router/angular-ui-router.js',
+      'lib/angular-mocks/angular-mocks.js',
       'lib/ionic/release/js/ionic.js',
       'lib/ionic/release/js/ionic-angular.js',
       'lib/ionic/release/js/ionic-bundle.js',
