@@ -31,14 +31,14 @@ module.exports = function(grunt) {
       compass: {
         files: ['<%= ionic.app %>/css/{,*/}*.{scss,sass}'],
         tasks: ['compass', 'autoprefixer']
-      },
-      karma: {
-        // grunt karma
-        unit: {
-          configFile: 'karma.conf.js'
-        }
       }
     },
+    karma: {
+      // grunt karma
+      unit: {
+        configFile: 'karma.conf.js'
+      }
+    }
     // Grunt Karma config example
     //karma: {
     //  options: {
@@ -58,6 +58,10 @@ module.exports = function(grunt) {
     //}
   
   });
+
+  grunt.registerTask('test', [
+    'karma'
+  ]);
 
 };
 
