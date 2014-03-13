@@ -22,8 +22,8 @@ module.exports = function(config) {
       'lib/ionic/release/js/ionic-bundle.js',
       'js/*.js',
       'js/**/*.js',
-      'tests/mock/**/*.js',
-      'tests/spec/**/*.js'
+      '../tests/mock/**/*.js',
+      '../tests/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
