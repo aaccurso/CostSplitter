@@ -100,6 +100,12 @@ module.exports = function(grunt) {
       }
     },
 
+    bowerInstall: {
+      target: {
+        src: '<%= ionic.src %>/index.html'
+      }
+    },
+
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
@@ -113,6 +119,8 @@ module.exports = function(grunt) {
     }
 
   });
+
+  grunt.registerTask('bowerInstall', ['bowerInstall']);
   
   // Serve task
   grunt.registerTask('serve', function (target) {
@@ -122,6 +130,7 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean:server',
+      // 'bowerInstall',
       'concurrent:server',
       'connect:livereload',
       'watch'
