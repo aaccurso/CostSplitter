@@ -14,9 +14,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     ionic: {
-      app: require('./bower.json').appPath || 'www',
       src: require('./bower.json').appSrc || 'www',
-      bower: 'www/lib'
+      dist: require('./bower.json').appPath || 'www',
     },
 
     watch: {
@@ -32,6 +31,10 @@ module.exports = function(grunt) {
           livereload: true
         }
       },
+      compass: {
+        files: ['<%= ionic.src %>/css/{,*/}*.{scss,sass}'],
+        tasks: ['compass']
+      },
       gruntfile: {
           files: ['Gruntfile.js']
       },
@@ -43,15 +46,15 @@ module.exports = function(grunt) {
           '<%= ionic.src %>/css/{,*/}*.css',
           '<%= ionic.src %>/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
-      },
-      compass: {
-        files: ['<%= ionic.src %>/css/{,*/}*.{scss,sass}'],
-        tasks: ['compass']
       }
     },
 
     karma: {
       unit: {
+        configFile: 'karma.conf.js',
+        singleRun: true
+      },
+      test: {
         configFile: 'karma.conf.js'
       }
     },
@@ -101,9 +104,6 @@ module.exports = function(grunt) {
     concurrent: {
       server: [
         'compass:server'
-      ],
-      test: [
-        'compass'
       ]
     },
 
@@ -131,9 +131,8 @@ module.exports = function(grunt) {
   // Test task
   grunt.registerTask('test', [
     'clean:server',
-    'concurrent:test',
     'connect:test',
-    'karma'
+    'karma:test'
   ]);
 
 };
