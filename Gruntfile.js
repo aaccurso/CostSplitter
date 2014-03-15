@@ -68,7 +68,7 @@ module.exports = function(grunt) {
           open: true,
           base: [
             '.tmp',
-            '<%= ionic.app %>'
+            '<%= ionic.src %>'
           ]
         }
       },
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
           base: [
             '.tmp',
             'tests',
-            '<%= ionic.app %>'
+            '<%= ionic.src %>'
           ]
         }
       }
@@ -86,15 +86,10 @@ module.exports = function(grunt) {
 
     compass: {
       options: {
-        sassDir: '<%= ionic.app %>/css',
-        cssDir: '.tmp/styles',
-        imagesDir: '<%= ionic.app %>/img',
-        javascriptsDir: '<%= ionic.app %>/js',
-        fontsDir: '<%= ionic.app %>/css/fonts',
-        importPath: '<%= ionic.bower %>',
-        relativeAssets: false,
-        assetCacheBuster: false,
-        raw: 'Sass::Script::Number.precision = 10\n'
+        sassDir: '<%= ionic.src %>/css',
+        specify: 'main.scss',
+        cssDir: '<%= ionic.src %>/css'
+        // raw: 'Sass::Script::Number.precision = 10\n'
       },
       server: {
         options: {
