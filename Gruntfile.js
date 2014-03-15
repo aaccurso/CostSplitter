@@ -10,11 +10,28 @@ module.exports = function(grunt) {
   
   // Project configuration.
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
+
     ionic: {
-      app: 'www'
+      app: require('./bower.json').appPath || 'www',
+      src: require('./bower.json').appSrc || 'www',
+      bower: 'www/lib'
     },
+
     watch: {
+      js: {
+        files: ['<%= ionic.src %>/js/{,*/}*.js'],
+        options: {
+          livereload: true
+        }
+      },
+      html: {
+        files: ['<%= ionic.src %>/templates/{,*/}*.html',],
+        options: {
+          livereload: true
+        }
+      },
       gruntfile: {
           files: ['Gruntfile.js']
       },
@@ -23,43 +40,105 @@ module.exports = function(grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= ionic.app %>/templates/{,*/}*.html',
-          '<%= ionic.app %>/css/{,*/}*.css',
-          '<%= ionic.app %>/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= ionic.src %>/css/{,*/}*.css',
+          '<%= ionic.src %>/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       },
       compass: {
-        files: ['<%= ionic.app %>/css/{,*/}*.{scss,sass}'],
-        tasks: ['compass', 'autoprefixer']
+        files: ['<%= ionic.src %>/css/{,*/}*.{scss,sass}'],
+        tasks: ['compass']
       }
     },
+
     karma: {
-      // grunt karma
       unit: {
         configFile: 'karma.conf.js'
       }
+    },
+
+    connect: {
+      options: {
+        port: 9000,
+        // Change this to '0.0.0.0' to access the server from outside.
+        hostname: 'localhost',
+        livereload: 35729
+      },
+      livereload: {
+        options: {
+          open: true,
+          base: [
+            '.tmp',
+            '<%= ionic.app %>'
+          ]
+        }
+      },
+      test: {
+        options: {
+          port: 9001,
+          base: [
+            '.tmp',
+            'tests',
+            '<%= ionic.app %>'
+          ]
+        }
+      }
+    },
+
+    compass: {
+      options: {
+        sassDir: '<%= ionic.app %>/css',
+        cssDir: '.tmp/styles',
+        imagesDir: '<%= ionic.app %>/img',
+        javascriptsDir: '<%= ionic.app %>/js',
+        fontsDir: '<%= ionic.app %>/css/fonts',
+        importPath: '<%= ionic.bower %>',
+        relativeAssets: false,
+        assetCacheBuster: false,
+        raw: 'Sass::Script::Number.precision = 10\n'
+      },
+      server: {
+        options: {
+          debugInfo: true
+        }
+      }
+    },
+
+    // Run some tasks in parallel to speed up the build process
+    concurrent: {
+      server: [
+        'compass:server'
+      ],
+      test: [
+        'compass'
+      ]
+    },
+
+    // Empties folders to start fresh
+    clean: {
+      server: '.tmp'
     }
-    // Grunt Karma config example
-    //karma: {
-    //  options: {
-    //    configFile: 'karma.conf.js',
-    //    runnerPort: 9999,
-    //    browsers: ['Chrome', 'Firefox']
-    //  },
-    //// grunt karma:continuous
-    //  continuous: {
-    //    singleRun: true,
-    //    browsers: ['PhantomJS']
-    //  },
-    //// grunt karma:dev
-    //  dev: {
-    //    reporters: 'dots'
-    //  }
-    //}
+
+  });
   
+  // Serve task
+  grunt.registerTask('serve', function (target) {
+    if (target === 'dist') {
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
+    }
+
+    grunt.task.run([
+      'clean:server',
+      'concurrent:server',
+      'connect:livereload',
+      'watch'
+    ]);
   });
 
+  // Test task
   grunt.registerTask('test', [
+    'clean:server',
+    'concurrent:test',
+    'connect:test',
     'karma'
   ]);
 

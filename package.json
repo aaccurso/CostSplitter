@@ -3,10 +3,17 @@
   "description": "Mobile app to split costs of events among people.",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {
-    "express": "3.4.8"
-  },
   "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-compass": "^0.7.2",
+    "grunt-autoprefixer": "^0.7.2",
+    "grunt-bower-install": "^1.0.2",
+    "grunt-contrib-watch": "^0.6.0",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-karma": "^0.8.0",
+    "karma": "^0.12.0",
     "karma-script-launcher": "^0.1.0",
     "karma-chrome-launcher": "^0.1.2",
     "karma-firefox-launcher": "^0.1.3",
@@ -15,19 +22,18 @@
     "karma-requirejs": "^0.2.1",
     "karma-coffee-preprocessor": "^0.1.3",
     "karma-phantomjs-launcher": "^0.1.2",
-    "karma": "^0.12.0",
     "karma-jasmine": "^0.1.5",
     "karma-coverage": "^0.2.0",
-    "phantomjs": "^1.9.7-1",
     "karma-junit-reporter": "^0.2.1",
-    "grunt-karma": "^0.8.0",
-    "grunt": "^0.4.4",
-    "grunt-contrib-compass": "^0.7.2",
-    "grunt-autoprefixer": "^0.7.2",
-    "grunt-bower-install": "^1.0.2",
-    "grunt-contrib-watch": "^0.6.0",
-    "grunt-contrib-connect": "^0.7.1",
+    "phantomjs": "^1.9.7-1",
     "load-grunt-tasks": "^0.4.0",
     "time-grunt": "^0.2.10"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "serve": "grunt serve"
   }
 }
