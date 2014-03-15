@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         }
       },
       html: {
-        files: ['<%= ionic.src %>/templates/{,*/}*.html',],
+        files: ['<%= ionic.src %>/templates/{,*/}*.html','<%= ionic.src %>/index.html'],
         options: {
           livereload: true
         }
@@ -87,7 +87,6 @@ module.exports = function(grunt) {
     compass: {
       options: {
         sassDir: '<%= ionic.src %>/css',
-        specify: 'main.scss',
         cssDir: '<%= ionic.src %>/css'
         // raw: 'Sass::Script::Number.precision = 10\n'
       },
