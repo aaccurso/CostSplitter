@@ -12,12 +12,12 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'lib/angular/angular.js',
+      'lib/angular-mocks/angular-mocks.js',
       'lib/angular-animate/angular-animate.js',
       'lib/angular-sanitize/angular-sanitize.js',
       'lib/angular-ui-router/release/angular-ui-router.js',
-      'lib/ionic/release/js/ionic.js',
-      'lib/ionic/release/js/ionic-angular.js',
-      'lib/angular-mocks/angular-mocks.js',
+      'lib/ionic/js/ionic.js',
+      'lib/ionic/js/ionic-angular.js',
       'js/*.js',
       'js/**/*.js',
       '../tests/mock/**/*.js',
