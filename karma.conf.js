@@ -20,7 +20,7 @@ module.exports = function(config) {
       'lib/ionic/js/ionic-angular.js',
       'js/*.js',
       'js/**/*.js',
-      // '../tests/mock/**/*.js',
+      '../tests/mock/**/*.js',
       '../tests/spec/**/*.js'
     ],
 

@@ -4,14 +4,15 @@ angular.module('CostSplitter.controllers', [])
 // A simple controller that fetches a list of data from a service
 .controller('SplitterIndexCtrl', function($scope, SplitterService) {
   $scope.splitters = SplitterService.query();
+  $scope.newEvent = {};
   $scope.rightButtons = [{ 
       type: 'ion-navicon-round button-icon button-clear',
       tap: function(e) {
       	$scope.sideMenuController.toggleRight();
       }
   }];
-  $scope.addEvent = function () {
-  	console.info('Add event clicked.');
+  $scope.addEvent = function (splitterId) {
+  	SplitterService.addEventToSplitter(splitterId, $scope.newEvent);
   };
 })
 
