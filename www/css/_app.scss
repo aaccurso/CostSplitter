@@ -1,3 +1,7 @@
+html, body {
+	font-family: 'The Girl Next Door';
+}
+
 .ionic-logo {
   display: block;
   margin: 15px auto;
@@ -6,7 +10,9 @@
 }
 
 .nav-bar h1 {
+	font-family: 'Condiment';
 	font-weight: bold;
+	font-size: 1.5em;
 }
 
 .button.add-event {

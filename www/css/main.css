@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Condiment';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Condiment"), local("Condiment-Regular"), url("/css/fonts/Condiment/Condiment-Regular.woff") format("woff"), url("/css/fonts/Condiment/Condiment-Regular.ttf") format("truetype"), serif;
+}
+
+@font-face {
+  font-family: 'The Girl Next Door';
+  font-style: normal;
+  font-weight: 400;
+  src: local("The Girl Next Door"), local("TheGirlNextDoor"), url("/css/fonts/The_Girl_Next_Door/TheGirlNextDoor.woff") format("woff"), url("/css/fonts/The_Girl_Next_Door/TheGirlNextDoor.ttf") format("truetype"), serif;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_test\.scss}line{font-family:\000031}}
 .test {
   color: green;
@@ -5,6 +19,11 @@
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_app\.scss}line{font-family:\000031}}
+html, body {
+  font-family: 'The Girl Next Door';
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_app\.scss}line{font-family:\000035}}
 .ionic-logo {
   display: block;
   margin: 15px auto;
@@ -12,12 +31,14 @@
   height: 96px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_app\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_app\.scss}line{font-family:\0000312}}
 .nav-bar h1 {
+  font-family: 'Condiment';
   font-weight: bold;
+  font-size: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_app\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_app\.scss}line{font-family:\0000318}}
 .button.add-event {
   top: 2px;
   right: 1px;
