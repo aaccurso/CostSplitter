@@ -1,6 +1,22 @@
-ionic-angular-cordova-seed
+Cost$plitter
 ==========================
 
-The perfect starting point for an Ionic project.
+A mobile application built with Ionic Framework to split costs of events among people.
 
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
+### Configure Env
+
+Install node and then:
+
+```
+npm install
+bower install
+```
+
+Grunt tasks:
+
+```
+grunt serve
+grunt test
+```
+
+> TODO fork and create custom seed for ionic apps
