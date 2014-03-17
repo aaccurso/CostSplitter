@@ -86,7 +86,8 @@ module.exports = function(grunt) {
     compass: {
       options: {
         sassDir: '<%= ionic.src %>/css',
-        cssDir: '<%= ionic.src %>/css'
+        cssDir: '<%= ionic.src %>/css',
+        fontsDir: '<%= ionic.src %>/css/fonts'
         // raw: 'Sass::Script::Number.precision = 10\n'
       },
       server: {
