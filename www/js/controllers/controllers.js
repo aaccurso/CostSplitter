@@ -17,6 +17,9 @@ angular.module('CostSplitter.controllers', [])
       $scope.newEvent
     );
   };
+  $scope.removeSplitter = function ($index) {
+    SplitterService.removeSplitter($scope.splitters[$index].id);
+  }
 })
 
 .controller('EventCtrl', function($scope, $stateParams, SplitterService) {

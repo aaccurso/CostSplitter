@@ -5,7 +5,7 @@
 */
 angular.module('MockedServices', [])
 .value('LocalStorageMock', {
-	splitters: [
+	CostSplitter: [
     { id: 0, title: 'Viajes', events: [
         { id: 10, title: 'Carmen', date: new Date('2014-2-1'), costs: [
             { id: 110, title: 'Bebidas', cost: 200, person: 'Alan' },

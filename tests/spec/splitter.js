@@ -10,7 +10,7 @@ describe('Controller: SplitterIndexCtrl', function() {
 
   // define SplitterServiceMock
   beforeEach(inject(function(LocalStorageMock) {
-    var splitters = LocalStorageMock.splitters;
+    var splitters = LocalStorageMock.CostSplitter;
     SplitterServiceMock = {
 	    query: function() {
 	      return splitters;
@@ -24,6 +24,10 @@ describe('Controller: SplitterIndexCtrl', function() {
 	    addEventToSplitter: function (splitterId, newEvent) {
 	    	splitters[splitterId].events.push(newEvent);
 	    	return newEvent;
+	    },
+	    removeSplitter: function (splitterId) {
+	    	splitters.splice(splitterId, 1);
+	    	return splitterId;
 	    }
 	  };
   }));
@@ -49,7 +53,14 @@ describe('Controller: SplitterIndexCtrl', function() {
   	scope.newEvent = { id: 30, title: 'newEvent' };
   	scope.addEvent(0);
   	expect(SplitterServiceMock.getSplitterEvents(0).length).toBe(3);
+  	expect(scope.splitters[0].events.length).toBe(3);
   });
+
+  it('should remove Splitter by index', function () {
+  	scope.removeSplitter(1);
+  	expect(SplitterServiceMock.query().length).toBe(1);
+  	expect(scope.splitters.length).toBe(1);
+  })
 
 });
 
