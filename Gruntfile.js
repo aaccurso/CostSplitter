@@ -87,7 +87,7 @@ module.exports = function(grunt) {
       options: {
         sassDir: '<%= ionic.src %>/css',
         cssDir: '<%= ionic.src %>/css',
-        fontsDir: '<%= ionic.src %>/css/fonts'
+        fontsDir: 'css/fonts'
         // raw: 'Sass::Script::Number.precision = 10\n'
       },
       server: {

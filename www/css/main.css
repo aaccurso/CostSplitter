@@ -1,15 +1,11 @@
 @font-face {
-  font-family: 'Condiment';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Condiment"), local("Condiment-Regular"), url("/css/fonts/Condiment/Condiment-Regular.woff") format("woff"), url("/css/fonts/Condiment/Condiment-Regular.ttf") format("truetype"), serif;
+  font-family: "Condiment";
+  src: url('/css/fonts/Condiment/Condiment-Regular.woff') format('woff'), url('/css/fonts/Condiment/Condiment-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'The Girl Next Door';
-  font-style: normal;
-  font-weight: 400;
-  src: local("The Girl Next Door"), local("TheGirlNextDoor"), url("/css/fonts/The_Girl_Next_Door/TheGirlNextDoor.woff") format("woff"), url("/css/fonts/The_Girl_Next_Door/TheGirlNextDoor.ttf") format("truetype"), serif;
+  font-family: "The Girl Next Door";
+  src: url('/css/fonts/The_Girl_Next_Door/TheGirlNextDoor.woff') format('woff'), url('/css/fonts/The_Girl_Next_Door/TheGirlNextDoor.ttf') format('truetype');
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_test\.scss}line{font-family:\000031}}
@@ -32,14 +28,19 @@ html, body {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_app\.scss}line{font-family:\0000312}}
-.nav-bar h1 {
+.nav-bar.bar.bar-header .title {
   font-family: 'Condiment';
-  font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2em;
+  line-height: 47px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_app\.scss}line{font-family:\0000318}}
 .button.add-event {
   top: 2px;
   right: 1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/alan\/DevProjects\/CostSplitter\/www\/css\/_app\.scss}line{font-family:\0000323}}
+.currency {
+  font-family: sans-serif;
 }
