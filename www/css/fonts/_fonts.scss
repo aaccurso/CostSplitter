@@ -1,12 +1,3 @@
-@font-face {
-  font-family: 'Condiment';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Condiment'), local('Condiment-Regular'), url('/css/fonts/Condiment/Condiment-Regular.woff') format('woff'), url('/css/fonts/Condiment/Condiment-Regular.ttf') format('truetype'), serif;
-}
-@font-face {
-  font-family: 'The Girl Next Door';
-  font-style: normal;
-  font-weight: 400;
-  src: local('The Girl Next Door'), local('TheGirlNextDoor'), url('/css/fonts/The_Girl_Next_Door/TheGirlNextDoor.woff') format('woff'), url('/css/fonts/The_Girl_Next_Door/TheGirlNextDoor.ttf') format('truetype'), serif;
-}
+// FONT-FACE
+@include font-face("Condiment", font-files("Condiment/Condiment-Regular.woff", "Condiment/Condiment-Regular.ttf"));
+@include font-face("The Girl Next Door", font-files("The_Girl_Next_Door/TheGirlNextDoor.woff", "The_Girl_Next_Door/TheGirlNextDoor.ttf"));
