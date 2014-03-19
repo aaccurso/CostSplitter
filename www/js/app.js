@@ -1,7 +1,16 @@
-angular.module('CostSplitter', ['ionic', 'CostSplitter.services', 'CostSplitter.controllers'])
+angular.module('CostSplitter', ['ionic', 'CostSplitter.services', 'CostSplitter.controllers', 'ezfb'])
 
+.constant('FB_CONFIG', {
+  FB_APP_ID: '473499536106818',
+  LOCALE: 'es_AR'
+})
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $FBProvider, FB_CONFIG) {
+
+  $FBProvider.setLocale(FB_CONFIG.LOCALE);
+  $FBProvider.setInitParams({
+    appId: FB_CONFIG.FB_APP_ID
+  });  
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
