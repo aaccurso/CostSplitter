@@ -2,7 +2,7 @@
 
 angular.module('CostSplitter.controllers', [])
 
-.controller('SplitterIndexCtrl', function($scope, SplitterService) {
+.controller('SplitterIndexCtrl', function($scope, SplitterService, $FB) {
   $scope.splitters = SplitterService.query();
   $scope.newEvent = {};
   $scope.rightNavButtons = [{ 
@@ -19,7 +19,16 @@ angular.module('CostSplitter.controllers', [])
   };
   $scope.removeSplitter = function ($index) {
     SplitterService.removeSplitter($scope.splitters[$index].id);
-  }
+  };
+  $scope.login = function () {
+    $FB.login(function (res) {
+      if (res.authResponse) {
+        $FB.api('/me', function (res) {
+          console.log(res);
+        });
+      }
+    }, {scope: 'email'});
+  };
 })
 
 .controller('EventCtrl', function($scope, $stateParams, SplitterService) {
