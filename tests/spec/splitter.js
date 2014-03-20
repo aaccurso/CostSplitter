@@ -60,7 +60,7 @@ describe('Controller: SplitterIndexCtrl', function() {
   	scope.removeSplitter(1);
   	expect(SplitterServiceMock.query().length).toBe(1);
   	expect(scope.splitters.length).toBe(1);
-  })
+  });
 
 });
 

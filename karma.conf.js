@@ -18,10 +18,9 @@ module.exports = function(config) {
       'lib/angular-ui-router/release/angular-ui-router.js',
       'lib/ionic/release/js/ionic.js',
       'lib/ionic/release/js/ionic-angular.js',
-      'js/*.js',
-      'js/**/*.js',
-      '../tests/mock/**/*.js',
-      '../tests/spec/**/*.js'
+      'js/{,*/}*.js',
+      '../tests/mock/{,*/}*.js',
+      '../tests/spec/{,*/}*.js'
     ],
 
     // list of files / patterns to exclude
