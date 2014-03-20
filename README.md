@@ -5,16 +5,16 @@ A mobile application built with Ionic Framework to split costs of events among p
 
 ## Configure Env
 
-Install node and then:
+Install [node.js](http://nodejs.org/) and then:
 
-```
-npm install
-bower install
+```sh
+sudo npm install
+sudo bower install
 ```
 
 Grunt tasks:
 
-```
+```sh
 grunt serve
 grunt test
 ```
