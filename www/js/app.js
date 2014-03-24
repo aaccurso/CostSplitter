@@ -11,7 +11,7 @@ angular.module('CostSplitter', ['ionic', 'CostSplitter.services', 'CostSplitter.
   var _fb_init_config = { appId: FB_CONFIG.FB_APP_ID },
     _defaultLoadSDKFunction;
 
-  if ( ! ( typeof cordova === 'undefined' || typeof Cordova === 'undefined' ) ) {
+  if ( typeof cordova !== 'undefined' || typeof Cordova !== 'undefined' ) {
   // Executing on mobile device
 
     console.log('Executing on mobile device...');
@@ -21,23 +21,10 @@ angular.module('CostSplitter', ['ionic', 'CostSplitter.services', 'CostSplitter.
       useCachedDialogs: false // TODO: investigate behaviour
     });
 
-    _defaultLoadSDKFunction = [
-         '$window', '$document', '$fbAsyncInit', '$fbLocale',
-    function ($window,   $document,   $fbAsyncInit,   $fbLocale) {
-      // Load the SDK's source Asynchronously
-      (function(d){
-        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "lib/facebook-cordova/facebook-js-sdk.js";
-        // js.src = "//connect.facebook.net/" + $fbLocale + "/all/debug.js";  // debug
-        ref.parentNode.insertBefore(js, ref);
-      }($document[0]));
-
-      $window.fbAsyncInit = $fbAsyncInit;
-    }];
-
-    $FBProvider.setLoadSDKFunction( _defaultLoadSDKFunction );
+    // Android FB SDK loaded so no need to load JS SDK
+    $FBProvider.setLoadSDKFunction(function ($fbAsyncInit) {
+      $fbAsyncInit();
+    });
 
   } else { // Executing on browser
     console.log('Executing on browser...');
