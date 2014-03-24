@@ -8,14 +8,20 @@ angular.module('CostSplitter', ['ionic', 'CostSplitter.services', 'CostSplitter.
 
 .config(function($stateProvider, $urlRouterProvider, $FBProvider, FB_CONFIG) {
 
-  var _fb_init_config = {};
+  var _fb_init_config = { appId: FB_CONFIG.FB_APP_ID },
+    _defaultLoadSDKFunction;
 
-  $FBProvider.setLocale(FB_CONFIG.LOCALE);
+  if ( ! ( typeof cordova === 'undefined' || typeof Cordova === 'undefined' ) ) {
+  // Executing on mobile device
 
-  if ( typeof cordova === 'undefined' || typeof Cordova === 'undefined' ) { // Executing on mobile device
+    console.log('Executing on mobile device...');
 
-  } else {
-    var _defaultLoadSDKFunction = [
+    angular.extend( _fb_init_config, {
+      nativeInterface: CDV.FB,
+      useCachedDialogs: false // TODO: investigate behaviour
+    });
+
+    _defaultLoadSDKFunction = [
          '$window', '$document', '$fbAsyncInit', '$fbLocale',
     function ($window,   $document,   $fbAsyncInit,   $fbLocale) {
       // Load the SDK's source Asynchronously
@@ -23,7 +29,7 @@ angular.module('CostSplitter', ['ionic', 'CostSplitter.services', 'CostSplitter.
         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
         if (d.getElementById(id)) {return;}
         js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/" + $fbLocale + "/all.js";
+        js.src = "lib/facebook-cordova/facebook-js-sdk.js";
         // js.src = "//connect.facebook.net/" + $fbLocale + "/all/debug.js";  // debug
         ref.parentNode.insertBefore(js, ref);
       }($document[0]));
@@ -33,18 +39,11 @@ angular.module('CostSplitter', ['ionic', 'CostSplitter.services', 'CostSplitter.
 
     $FBProvider.setLoadSDKFunction( _defaultLoadSDKFunction );
 
-    _fb_init_config = {
-      status: true,
-      cookie: true,
-      xfbml: true,
-      frictionlessRequests: true,
-      useCachedDialogs: true,
-      oauth: true
-    };
-
+  } else { // Executing on browser
+    console.log('Executing on browser...');
   };
 
-  _fb_init_config.appId = FB_CONFIG.FB_APP_ID;
+  $FBProvider.setLocale(FB_CONFIG.LOCALE);
   $FBProvider.setInitParams( _fb_init_config );
 
   // Ionic uses AngularUI Router which uses the concept of states
