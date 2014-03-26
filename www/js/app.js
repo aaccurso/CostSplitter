@@ -3,7 +3,7 @@ angular.module('CostSplitter', ['ionic', 'CostSplitter.services', 'CostSplitter.
 .constant('FB_CONFIG', {
   FB_APP_ID: '662664923796340',
   LOCALE: 'es_AR',
-  PERMISSIONS: 'basic_info email publish_actions'.split(' ')
+  PERMISSIONS: 'basic_info email publish_actions'
 })
 
 .config(function($stateProvider, $urlRouterProvider, $FBProvider, FB_CONFIG) {
