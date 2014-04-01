@@ -22,6 +22,9 @@ grunt test
 ## Configure Android Env (Ubuntu)
 Go to [Ubuntu Install & Configure Android SDK](https://github.com/aaccurso/CostSplitter/wiki/Ubuntu-Install-&-Configure-Android-SDK)
 
+## Facebook Cordova Integration
+Go to [Facebook Cordova Integration](https://github.com/aaccurso/CostSplitter/wiki/Facebook-Cordova-Integration)
+
 ***
 
 > TODO fork and create custom seed for ionic apps
