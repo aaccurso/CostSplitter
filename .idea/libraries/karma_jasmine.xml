@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="karma-jasmine" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="node_modules" />
+      <sourceFilesUrls>
+        <item url="file://$USER_HOME$/.npm/karma-jasmine/0.1.5/package/lib" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.npm/karma-jasmine/0.1.5/package/lib" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
