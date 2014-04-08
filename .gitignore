@@ -7,3 +7,4 @@ tests/coverage
 .tmp/
 .sass-cache/
 www/lib/
+.idea
